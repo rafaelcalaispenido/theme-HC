@@ -1,0 +1,419 @@
+{{#if settings.custom_widgets}}
+    <div id="support-channels" class="widget-presentation">
+        {{#if signed_in}}
+            <div class="element" tooltip="whatsapp">
+                <div class="whatsapp">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.7453 6.67803C8.96024 6.67803 9.2138 6.69028 9.44125 7.20705C9.59266 7.54299 9.83788 8.14716 10.0423 8.65074C10.2136 9.0731 10.3563 9.42469 10.3909 9.48814C10.4665 9.6388 10.5177 9.82834 10.4163 10.0294C10.3511 10.1446 10.3066 10.2391 10.2524 10.3319C10.2116 10.4016 10.1652 10.4704 10.1001 10.5462C10.0528 10.6012 10.003 10.6611 9.95268 10.7217C9.84151 10.8555 9.72738 10.9929 9.63142 11.0882C9.46669 11.2396 9.31514 11.4032 9.49226 11.7181L9.51891 11.7607C9.73599 12.1075 10.342 13.0762 11.226 13.8602C12.242 14.7635 13.1184 15.1348 13.5507 15.3179C13.625 15.3494 13.6862 15.3753 13.7328 15.3974C14.0367 15.5488 14.2262 15.5236 14.4033 15.3218C14.5935 15.1207 15.1882 14.4273 15.3908 14.1124C15.5933 13.8096 15.796 13.8602 16.0867 13.961C16.3782 14.0626 17.8971 14.8179 18.2133 14.9693C18.5172 15.1328 18.7328 15.2086 18.8087 15.3347C18.8844 15.4609 18.8844 16.0908 18.6315 16.8086C18.3656 17.5401 17.0998 18.2206 16.5305 18.2833C16.4813 18.2887 16.4325 18.2952 16.3826 18.3019C15.8532 18.3722 15.2016 18.4587 12.7957 17.5149C9.86641 16.36 7.93455 13.5095 7.54344 12.9324C7.51209 12.8862 7.49069 12.8545 7.47938 12.8395C7.32784 12.6385 6.21359 11.1639 6.21359 9.63946C6.21359 8.20795 6.91614 7.46476 7.24332 7.11857C7.26472 7.09593 7.2845 7.07503 7.3024 7.05572C7.59311 6.74075 7.93496 6.66505 8.13751 6.66505C8.35244 6.66505 8.55513 6.66505 8.7453 6.67803Z"
+                            fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M1.77237 18.5862L0 25L6.60834 23.2738C8.42983 24.2683 10.4768 24.7886 12.5572 24.786C19.4184 24.786 25 19.2285 25 12.3987C25 9.08482 23.7092 5.97273 21.3547 3.62892C19.0001 1.28505 15.8737 0 12.5448 0C5.68359 0 0.101344 5.55683 0.114399 12.3987C0.111034 14.5691 0.682623 16.7025 1.77237 18.5862ZM7.27952 21.2703L6.89985 21.0432L6.89837 21.0439L2.96171 22.0774L4.01257 18.2719L3.77206 17.8806C2.73359 16.2431 2.18919 14.3403 2.18919 12.3995C2.18919 6.72943 6.83498 2.10453 12.5441 2.10453C15.3038 2.10453 17.9113 3.18846 19.8622 5.12801C21.8115 7.06897 22.8871 9.6643 22.8871 12.4117C22.8871 18.0817 18.2415 22.7066 12.5454 22.7066C10.6916 22.7052 8.87222 22.209 7.27952 21.2703Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
+            <div class="element" tooltip="chat">
+                <div class="chat">
+                    <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 10.5C0 4.70101 4.70101 0 10.5 0H11.5C17.299 0 22 4.70101 22 10.5C22 16.299 17.299 21 11.5 21H10.5C4.70101 21 0 16.299 0 10.5Z"
+                            fill="white" />
+                        <path
+                            d="M0.689359 22.3969L4.76971 15.8683C4.90174 15.6571 5.16914 15.5752 5.39678 15.6764L12.7414 18.9407C13.1684 19.1304 13.1249 19.75 12.6757 19.8783L1.25072 23.1426C0.810364 23.2684 0.446633 22.7852 0.689359 22.3969Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
+        {{else}}
+            <div class="element">
+                <div class="widget-baloon" style="user-select: none;">
+                    <span>Ajuda</span>
+                </div>
+            </div>
+        {{/if}}
+        <div class="element">
+            <div class="expand">
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5L5 1L9 5" stroke="#0B0C0D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        iframe#launcher {
+            display: none!important;
+        }
+    </style>
+
+    {{#if signed_in}}
+        <script>
+            const chatUserLoggedIn = true; 
+        </script>
+    {{else}}
+        <script>
+            const chatUserLoggedIn = false;
+        </script>
+
+        <!-- Widget Help -->
+        <div id="widget-help" class="widget-help" chat-trigger="closed">
+            <div class="widget-header">
+                <div class="widget-close" onclick="closeChat()">
+                </div>
+                <h4>
+                    Como podemos te ajudar?
+                </h4>
+                <div class="widget-input-search">
+                    <input id="widget-search-input" type="text" placeholder="Encontre a solução na nossa Central de Ajuda"
+                        onkeydown="handleKeyDown(event)"></input>
+                    <button onclick="widgetSearchHC()">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="7.5" cy="7.5" r="6.5" stroke="white" stroke-width="2" stroke-linejoin="round" />
+                            <path
+                                d="M16.2929 17.7071C16.6834 18.0976 17.3166 18.0976 17.7071 17.7071C18.0976 17.3166 18.0976 16.6834 17.7071 16.2929L16.2929 17.7071ZM12 12L11.2929 12.7071L16.2929 17.7071L17 17L17.7071 16.2929L12.7071 11.2929L12 12Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        
+            <div class="widget-rediret-to-loggin">
+                <p>
+                    <b>É cliente e precisa de suporte?</b> Para um atendimento mais personalizado, acesse nossos canais pela
+                    área logada.
+                </p>
+                <a target="_blank" href="https://app.enotas.com.br/">Entrar usando login eNotas</a>
+                {{#link "sign_in" class="button-hotmart-color"}}
+                    Entrar usando login Hotmart
+                {{/link}}
+            </div>
+        
+            <div class="widget-footer">
+                <svg width="446" height="75" viewBox="0 0 446 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_40004052_4156)">
+                        <path
+                            d="M125 24.1277C125 6.78425 139.01 -7.27539 156.292 -7.27539H159.272C176.554 -7.27539 190.564 6.78425 190.564 24.1277C190.564 41.4711 176.554 55.5308 159.272 55.5308H156.292C139.01 55.5308 125 41.4711 125 24.1277Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M127.054 59.7085L139.215 40.1831C139.608 39.5513 140.405 39.3065 141.083 39.6091L162.972 49.3718C164.244 49.9393 164.115 51.7923 162.776 52.1762L128.727 61.9389C127.415 62.3152 126.331 60.87 127.054 59.7085Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M73.564 -5.8723C73.564 -23.2157 59.5541 -37.2754 42.2721 -37.2754H39.2919C22.0099 -37.2754 8 -23.2157 8 -5.8723C8 11.4711 22.0099 25.5308 39.2919 25.5308H42.2721C59.5541 25.5308 73.564 11.4711 73.564 -5.8723Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M71.5096 29.7085L59.3494 10.1831C58.9559 9.55127 58.159 9.30652 57.4806 9.60912L35.5923 19.3718C34.3199 19.9393 34.4493 21.7923 35.7881 22.1762L69.8366 31.9389C71.149 32.3152 72.2329 30.87 71.5096 29.7085Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M398.705 -9.43485C399.337 -9.43485 400.083 -9.39846 400.751 -7.86315C401.196 -6.86506 401.917 -5.07004 402.518 -3.57389C403.021 -2.31906 403.441 -1.27449 403.542 -1.08599C403.765 -0.63837 403.915 -0.0752404 403.617 0.52211C403.425 0.864301 403.295 1.14517 403.135 1.42071C403.015 1.628 402.879 1.83232 402.688 2.05742C402.549 2.2208 402.402 2.39882 402.254 2.57882C401.928 2.97659 401.592 3.38464 401.31 3.66769C400.826 4.11749 400.38 4.60368 400.901 5.53926L400.979 5.66585C401.617 6.69618 403.399 9.57434 405.997 11.9034C408.983 14.5871 411.56 15.6903 412.83 16.2342C413.049 16.3278 413.229 16.4049 413.365 16.4706C414.259 16.9204 414.816 16.8454 415.336 16.2459C415.895 15.6483 417.643 13.5885 418.239 12.6527C418.834 11.7533 419.43 11.9034 420.284 12.2031C421.141 12.5047 425.606 14.7489 426.535 15.1985C427.429 15.6845 428.062 15.9096 428.285 16.2843C428.508 16.6591 428.508 18.5306 427.764 20.6633C426.983 22.8365 423.262 24.8582 421.589 25.0445C421.444 25.0608 421.301 25.0799 421.154 25.0997C419.598 25.3086 417.683 25.5657 410.611 22.7617C402.001 19.3303 396.322 10.8614 395.173 9.1471C395.081 9.00963 395.018 8.91548 394.984 8.87097C394.539 8.27382 391.264 3.89259 391.264 -0.636395C391.264 -4.88945 393.329 -7.09747 394.291 -8.12602C394.353 -8.19327 394.412 -8.25538 394.464 -8.31274C395.319 -9.24853 396.324 -9.47342 396.919 -9.47342C397.551 -9.47342 398.146 -9.47342 398.705 -9.43485Z"
+                            fill="#F6F8F9" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M378.21 25.9445L373 45L392.424 39.8715C397.778 42.826 403.795 44.3718 409.91 44.3641C430.077 44.3641 446.484 27.8527 446.484 7.56135C446.484 -2.28425 442.689 -11.5303 435.769 -18.4938C428.848 -25.4575 419.658 -29.2754 409.874 -29.2754C389.706 -29.2754 373.298 -12.766 373.336 7.56135C373.326 14.0098 375.006 20.348 378.21 25.9445ZM394.397 33.9189L393.281 33.2443L393.277 33.2464L381.706 36.317L384.794 25.0107L384.087 23.8483C381.035 18.983 379.435 13.3299 379.435 7.56372C379.435 -9.28215 393.09 -23.0228 409.872 -23.0228C417.983 -23.0228 425.648 -19.8024 431.382 -14.04C437.112 -8.27338 440.273 -0.562614 440.273 7.59992C440.273 24.4456 426.618 38.1862 409.875 38.1862C404.426 38.1821 399.078 36.7079 394.397 33.9189Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M242.651 15.9892C243.148 14.1745 245.752 14.1745 246.249 15.9892C249.095 26.371 257.391 34.531 267.852 37.0707L268.495 37.2269C270.38 37.6845 270.38 40.3649 268.495 40.8225L267.852 40.9787C257.391 43.5185 249.095 51.6784 246.249 62.0602C245.752 63.8749 243.148 63.8749 242.651 62.0602C239.805 51.6784 231.509 43.5185 221.048 40.9787L220.405 40.8225C218.52 40.3649 218.52 37.6845 220.405 37.2269L221.048 37.0707C231.509 34.531 239.805 26.371 242.651 15.9892Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M266.067 -8.71989C266.449 -10.2003 268.551 -10.2003 268.933 -8.71989L269.658 -5.90911C270.667 -1.99731 273.722 1.05738 277.634 2.06646L280.445 2.79152C281.925 3.17341 281.925 5.27581 280.444 5.6577L277.634 6.38276C273.722 7.39184 270.667 10.4465 269.658 14.3583L268.933 17.1691C268.551 18.6495 266.449 18.6495 266.067 17.1691L265.342 14.3583C264.333 10.4465 261.278 7.39184 257.366 6.38276L254.556 5.6577C253.075 5.27581 253.075 3.17341 254.556 2.79152L257.366 2.06646C261.278 1.05738 264.333 -1.99732 265.342 -5.90912L266.067 -8.71989Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M227.716 -2.62238C227.898 -3.32935 228.902 -3.32935 229.084 -2.62238C229.598 -0.629773 231.154 0.926234 233.147 1.44024C233.854 1.62261 233.854 2.62661 233.147 2.80898C231.154 3.32298 229.598 4.87899 229.084 6.8716C228.902 7.57857 227.898 7.57857 227.716 6.8716C227.202 4.87899 225.646 3.32298 223.653 2.80898C222.946 2.62661 222.946 1.62261 223.653 1.44024C225.646 0.926234 227.202 -0.629773 227.716 -2.62238Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M54.6508 57.9894C55.1482 56.1748 57.7518 56.1748 58.2492 57.9894C61.0946 68.3712 69.3907 76.5312 79.8516 79.0709L80.4952 79.2272C82.3799 79.6847 82.3799 82.3651 80.4952 82.8227L79.8516 82.979C69.3907 85.5187 61.0946 93.6787 58.2492 104.061C57.7518 105.875 55.1482 105.875 54.6508 104.061C51.8054 93.6787 43.5092 85.5187 33.0484 82.979L32.4048 82.8227C30.5201 82.3651 30.5201 79.6847 32.4048 79.2272L33.0484 79.0709C43.5092 76.5312 51.8054 68.3712 54.6508 57.9894Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M78.0669 33.2803C78.4488 31.7999 80.5512 31.7999 80.9331 33.2804L81.6581 36.0911C82.6672 40.0029 85.7219 43.0576 89.6337 44.0667L92.4445 44.7918C93.9249 45.1737 93.9249 47.2761 92.4445 47.6579L89.6337 48.383C85.7219 49.3921 82.6672 52.4468 81.6581 56.3586L80.9331 59.1694C80.5512 60.6498 78.4488 60.6498 78.0669 59.1693L77.3419 56.3586C76.3328 52.4468 73.2781 49.3921 69.3663 48.383L66.5555 47.6579C65.0751 47.2761 65.0751 45.1737 66.5555 44.7918L69.3663 44.0667C73.2781 43.0576 76.3328 40.0029 77.3419 36.0911L78.0669 33.2803Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M39.7156 39.3779C39.898 38.6709 40.902 38.6709 41.0844 39.3779C41.5984 41.3705 43.1544 42.9265 45.147 43.4405C45.854 43.6229 45.854 44.6268 45.147 44.8092C43.1544 45.3232 41.5984 46.8792 41.0844 48.8718C40.902 49.5788 39.898 49.5788 39.7156 48.8718C39.2016 46.8792 37.6456 45.3232 35.653 44.8092C34.946 44.6268 34.946 43.6229 35.653 43.4405C37.6456 42.9265 39.2016 41.3705 39.7156 39.3779Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M291.837 57.1071C288.613 53.3564 289.041 47.7023 292.791 44.4785L317.127 23.5618C320.878 20.3379 326.532 20.7651 329.756 24.5159L357.483 56.7749C360.706 60.5257 360.279 66.1797 356.528 69.4035L332.193 90.3203C328.442 93.5441 322.788 93.1169 319.564 89.3661L291.837 57.1071Z"
+                            fill="#F6F8F9" />
+                        <path
+                            d="M302.927 57.4159C301.315 55.5405 301.529 52.7135 303.404 51.1016L322.646 34.5627C324.522 32.9508 327.349 33.1644 328.961 35.0398C330.573 36.9152 330.359 39.7422 328.484 41.3541L309.241 57.893C307.366 59.5049 304.539 59.2913 302.927 57.4159Z"
+                            fill="white" />
+                        <path
+                            d="M314.115 70.4327C312.503 68.5573 312.717 65.7303 314.592 64.1184L333.834 47.5795C335.71 45.9676 338.537 46.1812 340.149 48.0566C341.761 49.932 341.547 52.759 339.672 54.3709L320.429 70.9097C318.554 72.5217 315.727 72.3081 314.115 70.4327Z"
+                            fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_40004052_4156">
+                            <rect width="446" height="75" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    {{/if}}
+
+    <script>
+        /* Loading */
+        localStorage.setItem('ZD-launcherLabelRemoved', 'true');
+        setSessionStorage('ZD-widgetOpen', false);
+        widgetPresentation();
+        let chatOpened = false;
+
+        /* Scroll Events */
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.scrollY > topDistance) appearSupport();
+        });
+
+        let previousPosition = window.scrollY;
+        const topDistance = 40;
+
+        window.onscroll = () => {
+            const currentPosition = window.scrollY;
+            if (previousPosition > currentPosition && isMobile()) {
+                if (currentPosition < topDistance) appearSupport(currentPosition);
+            } else if (previousPosition > topDistance && isMobile()) {
+                hideSupport();
+            }
+            previousPosition = currentPosition;
+        };
+
+        /* Widget event */
+        document.querySelector('#support-channels .chat')?.addEventListener('click', () => {
+            chatOpened ? closeChat() : openChat();
+        });
+
+        document.querySelector('#support-channels .whatsapp')?.addEventListener('click', () => {
+            window.open('https://api.whatsapp.com/send?phone=553197052109', '_blank');
+        });
+
+        document.querySelector('#support-channels .widget-baloon')?.addEventListener('click', () => {
+            chatOpened ? closeChat() : openChat();
+        });
+
+        document.querySelector('#support-channels .expand')?.addEventListener('click', () => {
+            appearSupport();
+        });
+
+        /* Actions */
+        function appearSupport() {
+            document.querySelector('#support-channels')?.classList.remove('minimize');
+        }
+
+        function hideSupport() {
+            document.querySelector('#support-channels')?.classList.add('minimize');
+        }
+
+        function openChat() {
+            const supportChannels = document.querySelector('#support-channels');
+            if (typeof zE !== 'undefined' || chatUserLoggedIn == false) {
+                if (isMobile()) {
+                    supportChannels?.classList.remove('minimize');
+                } else {
+                    chatOpened = true;
+                    supportChannels?.classList.add('active-chat');
+                }
+                if(chatUserLoggedIn)
+                {
+                    zE('messenger', 'open');
+                } else {
+                    document.getElementById('widget-help').style.display = 'flex';
+                    requestAnimationFrame(() => {
+                        document.getElementById('widget-help').setAttribute('chat-trigger', 'opened');
+                    });
+                }
+            }
+        }
+
+        function widgetPresentation() {
+            setTimeout(() => {
+                document.querySelector('#support-channels')?.classList.remove('widget-presentation');
+            }, 3000);
+        }
+
+        function closeChat() {
+            if (typeof zE !== 'undefined' || chatUserLoggedIn == false) {
+                document.querySelector('#support-channels')?.classList.remove('active-chat');
+                if(chatUserLoggedIn)
+                {
+                    zE('messenger', 'close');
+                } else {
+                    document.getElementById('widget-help').setAttribute('chat-trigger', 'closed');
+                    requestAnimationFrame(() => {
+                        document.getElementById('widget-help').style.display = 'none';
+                    });
+                }
+                chatOpened = false;
+            }
+        }
+
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
+        /* User session storage */
+        function setSessionStorage(key, value) {
+            sessionStorage.setItem(key, JSON.stringify(value));
+        }
+
+        function getSessionStorage(key) {
+            const value = sessionStorage.getItem(key);
+            return value ? JSON.parse(value) : null;
+        }
+    
+        /* widget help */
+        function widgetSearchHC() {
+            const input = document.getElementById('widget-search-input').value;
+            const encodedQuery = encodeURIComponent(input);
+            const url = `/hc/search?utf8=✓&query=${encodedQuery}`;
+            window.location.href = url;
+        }
+
+        function handleKeyDown(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                widgetSearchHC();
+            }
+        }
+
+    </script>
+
+{{/if}}
+
+<footer class="footer">
+    <!-- footer brand -->
+    <div class="footer-end">
+        <div class="footer-container">
+            {{#if alternative_locales}}
+                <div class="footer-language">
+                    <div class="dropdown language-selector">
+                        <button class="dropdown-toggle" aria-haspopup="true">
+                            {{current_locale.name}}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+                                class="dropdown-chevron-icon">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                    d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
+                            </svg>
+                        </button>
+                        <span class="dropdown-menu dropdown-menu-end" role="menu">
+                            {{#each alternative_locales}}
+                                <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                                    {{name}}
+                                </a>
+                            {{/each}}
+                        </span>
+                    </div>
+                </div>
+            {{else}}
+                <ul class="social">
+                    <li>
+                        <a class="h-youtube" href="https://enotas.com.br/youtube/" target="_blank">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.565 13.4965C19.3113 14.4753 18.5683 15.2471 17.6259 15.5106C15.8862 16 10 16 10 16C10 16 4.11366 16 2.39208 15.5294C1.44975 15.2659 0.70675 14.4941 0.45305 13.4965C-8.9407e-08 11.7082 0 8 0 8C0 8 -8.9407e-08 4.27294 0.45305 2.50353C0.70675 1.50588 1.44975 0.73412 2.4102 0.47059C4.13178 1.19209e-07 10 0 10 0C10 0 15.8862 1.19209e-07 17.6078 0.47059C18.5502 0.73412 19.2932 1.50588 19.5469 2.4847C19.9999 4.27294 19.9999 7.9812 19.9999 7.9812C19.9999 7.9812 20.018 11.7082 19.565 13.4965ZM7.80721 4.57412V11.4259L13.5337 8L7.80721 4.57412Z"
+                                    fill="#0B0C0D" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            {{/if}}
+            <div class="copyright">
+                <span data-lang="copyright">eNotas 2025 © - Todos os direitos reservados</span>
+            </div>
+            <div class="links">
+                <a data-lang="privacy_policies" href="https://enotas.com.br/visao-geral-das-politicas-de-privacidade/" target="_blank">Políticas de privacidade</a>
+                <i></i>
+                <a data-lang="terms" href="https://enotas.com.br/termos-de-uso/" target="_blank">Termos de Uso</a>
+            </div>
+        </div>
+    </div>
+    {{#if settings.import_custom_font }}
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Red+Hat+Display:wght@300;400;500;700&display=swap" rel="stylesheet">
+    {{/if}}
+</footer>
+
+<script>
+    const langPlaceholder = {
+        /* header */
+        how_can_we_help: {
+            pt: 'Como podemos te ajudar?',
+            en: 'How can we help you?'
+        },
+        hero_banner: {
+            pt: 'Sou cliente e quero alterar os dados da minha conta no eNotas',
+            en: 'I am a customer and want to change my account details on eNotas'
+        },
+        hero_banner_button: {
+            pt: 'Alterar dados',
+            en: 'Update details'
+        },
+        /* categories */
+        categories_title: {
+            pt: 'Encontre facilmente suas respostas explorando as categorias',
+            en: 'Easily find your answers by exploring the categories'
+        },
+        /* blocks */
+        change_password: {
+            pt: 'Alterar senha',
+            en: 'Change password'
+        },
+        company: {
+            pt: 'Empresa',
+            en: 'Company'
+        },
+        manage: {
+            pt: 'Gerenciar',
+            en: 'Manage'
+        },
+        /* footer */
+        
+        privacy_policies: {
+            pt: 'Políticas de privacidade',
+            en: 'Privacy policies'
+        },
+        terms: {
+            pt: 'Termos de uso',
+            en: 'Terms'
+        },
+        help_center: {
+            pt: 'Central de ajuda',
+            en: 'Help Center'
+        },
+        copyright: {
+            pt: 'eNotas 2026 © - Todos os direitos reservados',
+            en: 'eNotas 2026 © - All rights reserved'
+        }
+    };
+
+    const getLang = () => (window.location.pathname.includes('/hc/en') ? 'en' : 'pt');
+
+    const updateTranslations = () => {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            const translation = langPlaceholder[el.getAttribute('data-lang')]?.[getLang()] || el.textContent;
+            el.innerHTML = translation;
+        });
+    };
+
+    updateTranslations();
+
+    new MutationObserver(() => {
+        if (window.location.href !== this.lastUrl) {
+            this.lastUrl = window.location.href;
+            updateTranslations();
+        }
+    }).observe(document.body, { childList: true, subtree: true });
+</script>
+
+<style>
+    @media (max-width:768px) {
+        .sub-nav nav {
+            max-width: 100%;
+            overflow-x: scroll;
+        }
+
+        .sub-nav nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .breadcrumbs {
+            width: max-content;
+        }
+    }
+</style>

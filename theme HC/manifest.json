@@ -1,0 +1,691 @@
+{
+  "name": "Help Desk - eNotas [v1.1.42 - E_02]",
+  "author": "Diego David",
+  "version": "1.1.42",
+  "api_version": 4,
+  "default_locale": "pt-br",
+  "settings": [
+    {
+      "label": "colors_group_label",
+      "variables": [
+        {
+          "identifier": "brand_color",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#0B0C0D"
+        },
+        {
+          "identifier": "brand_text_color",
+          "type": "color",
+          "description": "brand_text_color_description",
+          "label": "brand_text_color_label",
+          "value": "#FFFFFF"
+        },
+        {
+          "identifier": "text_color",
+          "type": "color",
+          "description": "text_color_description",
+          "label": "text_color_label",
+          "value": "#2F3941"
+        },
+        {
+          "identifier": "link_color",
+          "type": "color",
+          "description": "link_color_description",
+          "label": "link_color_label",
+          "value": "#1F73B7"
+        },
+        {
+          "identifier": "hover_link_color",
+          "type": "color",
+          "description": "hover_link_color_description",
+          "label": "hover_link_color_label",
+          "value": "#0F3554"
+        },
+        {
+          "identifier": "visited_link_color",
+          "type": "color",
+          "description": "visited_link_color_description",
+          "label": "visited_link_color_label",
+          "value": "rgba(31, 115, 183, 1)"
+        },
+        {
+          "identifier": "background_color",
+          "type": "color",
+          "description": "background_color_description",
+          "label": "background_color_label",
+          "value": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "label": "fonts_group_label",
+      "variables": [
+        {
+          "identifier": "heading_font",
+          "type": "list",
+          "description": "heading_font_description",
+          "label": "heading_font_label",
+          "value": "'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+          "options": [
+            {
+              "label": "System",
+              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Arial",
+              "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
+            },
+            {
+              "label": "Arial Black",
+              "value": "'Arial Black', Arial, 'Helvetica Neue', Helvetica, sans-serif"
+            },
+            {
+              "label": "Baskerville",
+              "value": "Baskerville, 'Times New Roman', Times, serif"
+            },
+            {
+              "label": "Century Gothic",
+              "value": "'Century Gothic', sans-serif"
+            },
+            {
+              "label": "Copperplate Light",
+              "value": "'Copperplate Light', 'Copperplate Gothic Light', serif"
+            },
+            {
+              "label": "Courier New",
+              "value": "'Courier New', Courier, monospace"
+            },
+            {
+              "label": "Futura",
+              "value": "Futura, 'Century Gothic', sans-serif"
+            },
+            {
+              "label": "Garamond",
+              "value": "Garamond, 'Hoefler Text', 'Times New Roman', Times, serif"
+            },
+            {
+              "label": "Geneva",
+              "value": "Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif"
+            },
+            {
+              "label": "Georgia",
+              "value": "Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif"
+            },
+            {
+              "label": "Helvetica",
+              "value": "Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Helvetica Neue",
+              "value": "'Helvetica Neue', Arial, Helvetica, sans-serif"
+            },
+            {
+              "label": "Impact",
+              "value": "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+            },
+            {
+              "label": "Lucida Grande",
+              "value": "'Lucida Grande', 'Lucida Sans', 'Lucida Sans Unicode', sans-serif"
+            },
+            {
+              "label": "Red Hat Display (eNotas)",
+              "value": "'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Trebuchet MS",
+              "value": "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
+            }
+          ]
+        },
+        {
+          "identifier": "text_font",
+          "type": "list",
+          "description": "text_font_description",
+          "label": "text_font_label",
+          "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+          "options": [
+            {
+              "label": "System",
+              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Arial",
+              "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
+            },
+            {
+              "label": "Arial Black",
+              "value": "'Arial Black', Arial, 'Helvetica Neue', Helvetica, sans-serif"
+            },
+            {
+              "label": "Baskerville",
+              "value": "Baskerville, 'Times New Roman', Times, serif"
+            },
+            {
+              "label": "Century Gothic",
+              "value": "'Century Gothic', sans-serif"
+            },
+            {
+              "label": "Copperplate Light",
+              "value": "'Copperplate Light', 'Copperplate Gothic Light', serif"
+            },
+            {
+              "label": "Courier New",
+              "value": "'Courier New', Courier, monospace"
+            },
+            {
+              "label": "Futura",
+              "value": "Futura, 'Century Gothic', sans-serif"
+            },
+            {
+              "label": "Garamond",
+              "value": "Garamond, 'Hoefler Text', 'Times New Roman', Times, serif"
+            },
+            {
+              "label": "Geneva",
+              "value": "Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif"
+            },
+            {
+              "label": "Georgia",
+              "value": "Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif"
+            },
+            {
+              "label": "Helvetica",
+              "value": "Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Helvetica Neue",
+              "value": "'Helvetica Neue', Arial, Helvetica, sans-serif"
+            },
+            {
+              "label": "Impact",
+              "value": "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+            },
+            {
+              "label": "Lucida Grande",
+              "value": "'Lucida Grande', 'Lucida Sans', 'Lucida Sans Unicode', sans-serif"
+            },
+            {
+              "label": "Montserrat (eNotas)",
+              "value": "Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Trebuchet MS",
+              "value": "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
+            }
+          ]
+        },
+        {
+          "identifier": "import_custom_font",
+          "type": "checkbox",
+          "description": "import_custom_font_description",
+          "label": "import_custom_font_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "brand_group_label",
+      "variables": [
+        {
+          "identifier": "logo",
+          "type": "file",
+          "description": "logo_description",
+          "label": "logo_label"
+        },
+        {
+          "identifier": "show_brand_name",
+          "type": "checkbox",
+          "description": "show_brand_name_description",
+          "label": "show_brand_name_label",
+          "value": false
+        },
+        {
+          "identifier": "header_new_ticket",
+          "type": "checkbox",
+          "description": "header_new_ticket_description",
+          "label": "header_new_ticket_label",
+          "value": true
+        },
+        {
+          "identifier": "favicon",
+          "type": "file",
+          "description": "favicon_description",
+          "label": "favicon_label"
+        }
+      ]
+    },
+    {
+      "label": "images_group_label",
+      "variables": [
+        {
+          "identifier": "homepage_background_image",
+          "type": "file",
+          "description": "homepage_background_image_description",
+          "label": "homepage_background_image_label"
+        },
+        {
+          "identifier": "community_background_image",
+          "type": "file",
+          "description": "community_background_image_description",
+          "label": "community_background_image_label"
+        },
+        {
+          "identifier": "community_image",
+          "type": "file",
+          "description": "community_image_description",
+          "label": "community_image_label"
+        }
+      ]
+    },
+    {
+      "label": "search_group_label",
+      "variables": [
+        {
+          "identifier": "instant_search",
+          "type": "checkbox",
+          "description": "instant_search_description",
+          "label": "instant_search_label",
+          "value": true
+        },
+        {
+          "identifier": "show_search_aside",
+          "type": "checkbox",
+          "description": "show_search_aside_description",
+          "label": "show_search_aside_label",
+          "value": false
+        },
+        {
+          "identifier": "scoped_kb_search",
+          "type": "checkbox",
+          "description": "scoped_knowledge_base_search_description",
+          "label": "scoped_knowledge_base_search_label",
+          "value": true
+        },
+        {
+          "identifier": "scoped_community_search",
+          "type": "checkbox",
+          "description": "scoped_community_search_description",
+          "label": "scoped_community_search_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "home_page_group_label",
+      "variables": [
+        {
+          "identifier": "hero_h_animated",
+          "type": "checkbox",
+          "description": "hero_h_animated_description",
+          "label": "hero_h_animated_label",
+          "value": false
+        },
+        {
+          "identifier": "search_form_animated",
+          "type": "checkbox",
+          "description": "search_form_animated_description",
+          "label": "search_form_animated_label",
+          "value": false
+        },
+        {
+          "identifier": "homepage_bg_enable",
+          "type": "checkbox",
+          "description": "homepage_bg_enable_description",
+          "label": "homepage_bg_enable_label",
+          "value": false
+        },
+        {
+          "identifier": "show_recent_activity",
+          "type": "checkbox",
+          "description": "recent_activity_description",
+          "label": "recent_activity_label",
+          "value": true
+        },
+        {
+          "identifier": "section_categories_appearance",
+          "type": "list",
+          "description": "section_categories_appearance_description",
+          "label": "section_categories_appearance_label",
+          "value": "v-1",
+          "options": [
+            {
+              "label": "Card padrão",
+              "value": "v-1"
+            },
+            {
+              "label": "Card grande",
+              "value": "v-2"
+            },
+            {
+              "label": "Card limpo",
+              "value": "v-3"
+            }
+          ]
+        },
+        {
+          "identifier": "section_categories_show_icon",
+          "type": "checkbox",
+          "description": "section_categories_show_icon_description",
+          "label": "section_categories_show_icon_label",
+          "value": false
+        },
+        {
+          "identifier": "section_categories_color_hover",
+          "type": "list",
+          "description": "section_categories_color_hover_description",
+          "label": "section_categories_color_hover_label",
+          "value": "v-gray-hover-card",
+          "options": [
+            {
+              "label": "Tons de cinza",
+              "value": "v-gray-hover-card"
+            },
+            {
+              "label": "Verde da marca",
+              "value": "v-green-hover-card"
+            },
+            {
+              "label": "Laranja da marca",
+              "value": "v-orange-hover-card"
+            },
+            {
+              "label": "Roxo da marca",
+              "value": "v-purple-hover-card"
+            }
+          ]
+        },
+        {
+          "identifier": "section_categories_columns",
+          "type": "list",
+          "description": "section_categories_columns_description",
+          "label": "section_categories_columns_label",
+          "value": "50%",
+          "options": [
+            {
+              "label": "1 coluna",
+              "value": "100%"
+            },
+            {
+              "label": "2 colunas",
+              "value": "50%"
+            },
+            {
+              "label": "3 colunas",
+              "value": "33.33%"
+            },
+            {
+              "label": "4 colunas",
+              "value": "25%"
+            }
+          ]
+        },
+        {
+          "identifier": "categories_custom_content",
+          "type": "checkbox",
+          "description": "categories_custom_content_description",
+          "label": "categories_custom_content_label",
+          "value": true
+        },
+        {
+          "identifier": "section_categories_max_width",
+          "type": "list",
+          "description": "section_categories_max_width_description",
+          "label": "section_categories_max_width_label",
+          "value": "100%",
+          "options": [
+            {
+              "label": "100%",
+              "value": "100%"
+            },
+            {
+              "label": "95%",
+              "value": "95%"
+            },
+            {
+              "label": "90%",
+              "value": "90%"
+            },
+            {
+              "label": "85%",
+              "value": "85%"
+            },
+            {
+              "label": "80%",
+              "value": "80%"
+            },
+            {
+              "label": "75%",
+              "value": "75%"
+            },
+            {
+              "label": "70%",
+              "value": "70%"
+            }
+          ]
+        },
+        {
+          "identifier": "show_explore_categories",
+          "type": "checkbox",
+          "description": "show_explore_categories_description",
+          "label": "show_explore_categories_label",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "article_page_group_label",
+      "variables": [
+        {
+          "identifier": "show_articles_in_section",
+          "type": "checkbox",
+          "description": "articles_in_section_description",
+          "label": "articles_in_section_label",
+          "value": true
+        },
+        {
+          "identifier": "show_article_author",
+          "type": "checkbox",
+          "description": "article_author_description",
+          "label": "article_author_label",
+          "value": false
+        },
+        {
+          "identifier": "show_article_comments",
+          "type": "checkbox",
+          "description": "article_comments_description",
+          "label": "article_comments_label",
+          "value": false
+        },
+        {
+          "identifier": "show_follow_article",
+          "type": "checkbox",
+          "description": "follow_article_description",
+          "label": "follow_article_label",
+          "value": false
+        },
+        {
+          "identifier": "show_recently_viewed_articles",
+          "type": "checkbox",
+          "description": "recently_viewed_articles_description",
+          "label": "recently_viewed_articles_label",
+          "value": false
+        },
+        {
+          "identifier": "show_related_articles",
+          "type": "checkbox",
+          "description": "related_articles_description",
+          "label": "related_articles_label",
+          "value": true
+        },
+        {
+          "identifier": "show_article_sharing",
+          "type": "checkbox",
+          "description": "article_sharing_description",
+          "label": "article_sharing_label",
+          "value": false
+        },
+        {
+          "identifier": "article_text_formatting",
+          "type": "checkbox",
+          "description": "article_text_formatting_description",
+          "label": "article_text_formatting_label",
+          "value": true
+        },
+        {
+          "identifier": "article_img_formatting",
+          "type": "checkbox",
+          "description": "article_img_formatting_description",
+          "label": "article_img_formatting_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "section_page_group_label",
+      "variables": [
+        {
+          "identifier": "show_follow_section",
+          "type": "checkbox",
+          "description": "follow_section_description",
+          "label": "follow_section_label",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "community_post_group_label",
+      "variables": [
+        {
+          "identifier": "show_community",
+          "type": "checkbox",
+          "description": "show_community_description",
+          "label": "show_community_label",
+          "value": false
+        },
+        {
+          "identifier": "show_follow_post",
+          "type": "checkbox",
+          "description": "follow_post_description",
+          "label": "follow_post_label",
+          "value": false
+        },
+        {
+          "identifier": "show_post_sharing",
+          "type": "checkbox",
+          "description": "post_sharing_description",
+          "label": "post_sharing_label",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "community_topic_group_label",
+      "variables": [
+        {
+          "identifier": "show_follow_topic",
+          "type": "checkbox",
+          "description": "follow_topic_description",
+          "label": "follow_topic_label",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "request_list_group_label",
+      "variables": [
+        {
+          "identifier": "show_comment_form",
+          "type": "checkbox",
+          "description": "show_comment_form_description",
+          "label": "show_comment_form_label",
+          "value": true
+        },
+        {
+          "identifier": "whatsapp_ticket_link",
+          "type": "checkbox",
+          "description": "whatsapp_ticket_link_description",
+          "label": "whatsapp_ticket_link_label",
+          "value": false
+        },
+        {
+          "identifier": "request_list_beta",
+          "type": "checkbox",
+          "description": "request_list_beta_description",
+          "label": "request_list_beta_label",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "header_allert_banner_group_label",
+      "variables": [
+        {
+          "identifier": "header_allert_banner",
+          "type": "checkbox",
+          "description": "header_allert_banner_description",
+          "label": "header_allert_banner_label",
+          "value": false
+        },
+        {
+          "identifier": "show_home_banner",
+          "type": "list",
+          "description": "show_home_banner_description",
+          "label": "show_home_banner_label",
+          "value": "before-categories",
+          "options": [
+            {
+              "label": "Desabilitado",
+              "value": "disabled"
+            },
+            {
+              "label": "Exibir antes das categorias",
+              "value": "before-categories"
+            },
+            {
+              "label": "Exibir depois das categorias",
+              "value": "after-categories"
+            }
+          ]
+        },
+        {
+          "identifier": "banner_home_desktop",
+          "type": "file",
+          "description": "banner_home_desktop_description",
+          "label": "banner_home_desktop_label"
+        },
+        {
+          "identifier": "banner_home_mobile",
+          "type": "file",
+          "description": "banner_home_mobile_description",
+          "label": "banner_home_mobile_label"
+        }
+      ]
+    },
+    {
+      "label": "custom_widgets_group_label",
+      "variables": [
+        {
+          "identifier": "custom_widgets",
+          "type": "checkbox",
+          "description": "custom_widgets_description",
+          "label": "custom_widgets_label",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "redirection_gw_group_label",
+      "variables": [
+        {
+          "identifier": "redirection_gw_ribbon",
+          "type": "checkbox",
+          "description": "redirection_gw_ribbon_description",
+          "label": "redirection_gw_ribbon_label",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

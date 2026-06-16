@@ -1,0 +1,240 @@
+<div class="container-divider"></div>
+<div class="container">
+  <div class="sub-nav">
+    {{breadcrumbs}}
+    <div class="search-container">
+      <i class="search-icon">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13.4842" cy="17.4842" r="6.48421" stroke="#0B0C0D" stroke-width="2"/>
+          <path d="M23.2928 28.7068C23.6833 29.0973 24.3165 29.0973 24.707 28.7068C25.0976 28.3163 25.0976 27.6831 24.707 27.2926L23.9999 27.9997L23.2928 28.7068ZM17.9368 21.9365L17.2297 22.6436L23.2928 28.7068L23.9999 27.9997L24.707 27.2926L18.6439 21.2294L17.9368 21.9365Z" fill="#0B0C0D"/>
+          <path d="M15.8194 5.73146C15.866 5.5429 16.134 5.5429 16.1806 5.73146V5.73146C16.313 6.26802 16.732 6.68697 17.2685 6.81943V6.81943C17.4571 6.86597 17.4571 7.13403 17.2685 7.18057V7.18057C16.732 7.31303 16.313 7.73198 16.1806 8.26854V8.26854C16.134 8.4571 15.866 8.4571 15.8194 8.26854V8.26854C15.687 7.73198 15.268 7.31303 14.7315 7.18057V7.18057C14.5429 7.13403 14.5429 6.86597 14.7315 6.81943V6.81943C15.268 6.68697 15.687 6.26802 15.8194 5.73146V5.73146Z" fill="#0B0C0D"/>
+          <path d="M22.7573 7.98317C22.8199 7.72973 23.1801 7.72973 23.2427 7.98317L23.3768 8.52641C23.5104 9.06732 23.9327 9.48965 24.4736 9.62318L25.0168 9.75729C25.2703 9.81985 25.2703 10.1801 25.0168 10.2427L24.4736 10.3768C23.9327 10.5104 23.5104 10.9327 23.3768 11.4736L23.2427 12.0168C23.1801 12.2703 22.8199 12.2703 22.7573 12.0168L22.6232 11.4736C22.4896 10.9327 22.0673 10.5104 21.5264 10.3768L20.9832 10.2427C20.7297 10.1801 20.7297 9.81985 20.9832 9.75729L21.5264 9.62318C22.0673 9.48965 22.4896 9.06732 22.6232 8.52641L22.7573 7.98317Z" fill="#0B0C0D"/>
+        </svg>
+      </i>
+      {{search submit=false}}
+    </div>
+  </div>
+
+  <div class="search-results">
+    {{#if settings.show_search_aside}}
+    <aside class="search-results-sidebar">
+      {{#if source_filters}}
+        <section class="filters-in-section collapsible-sidebar">
+          <button type="button" class="collapsible-sidebar-toggle" aria-expanded="false" aria-label="{{t 'search_result_source_menu'}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
+              <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+            </svg>
+          </button>
+          <h3 class="collapsible-sidebar-title sidenav-title">{{t 'filter_source'}}</h3>
+          <ul class="multibrand-filter-list multibrand-filter-list--collapsed">
+            {{#each source_filters}}
+              <li>
+              {{#if selected}}
+                <a href="{{url}}" class="sidenav-item current" aria-current="page">
+              {{else}}
+                <a href="{{url}}" class="sidenav-item">
+              {{/if}}
+                  <span class="sidenav-subitem filter-name">{{name}}</span>
+                  <span class="sidenav-subitem doc-count">({{count}})</span>
+                </a>
+              </li>
+            {{/each}}
+            <button class="see-all-filters" aria-hidden="true" aria-label="{{t 'show_more_sources'}}">{{t 'show_more_sources'}}</button>
+          </ul>
+        </section>
+      {{/if}}
+      {{#if type_filters}}
+        <section class="filters-in-section collapsible-sidebar">
+          <button type="button" class="collapsible-sidebar-toggle" aria-expanded="false" aria-label="{{t 'search_result_type_menu'}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
+              <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+            </svg>
+          </button>
+          <h3 class="collapsible-sidebar-title sidenav-title">{{t 'filter_type'}}</h3>
+          <ul class="multibrand-filter-list multibrand-filter-list--collapsed">
+            {{#each type_filters}}
+              <li>
+              {{#if selected}}
+                <a href="{{url}}" class="sidenav-item current" aria-current="page">
+              {{else}}
+                <a href="{{url}}" class="sidenav-item">
+              {{/if}}
+                  <span class="sidenav-subitem filter-name">{{name}}</span>
+                  <span class="sidenav-subitem doc-count">({{count}})</span>
+                </a>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/if}}
+      {{#if subfilters}}
+        <section class="filters-in-section collapsible-sidebar">
+          <button type="button" class="collapsible-sidebar-toggle" aria-expanded="false" aria-label="{{t 'search_result_subfilter_menu'}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
+              <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+            </svg>
+          </button>
+          {{#is current_filter.identifier 'knowledge_base'}}
+            <h3 class="collapsible-sidebar-title sidenav-title">{{t 'filter_by_category'}}</h3>
+          {{/is}}
+          {{#is current_filter.identifier 'community'}}
+            <h3 class="collapsible-sidebar-title sidenav-title">{{t 'filter_by_topic'}}</h3>
+          {{/is}}
+          <ul class="multibrand-filter-list multibrand-filter-list--collapsed">
+            {{#each subfilters}}
+              <li>
+                {{#if selected}}
+                  <a href="{{url}}" class="sidenav-item current" aria-current="page">
+                {{else}}
+                  <a href="{{url}}" class="sidenav-item">
+                {{/if}}
+                  <span class="sidenav-subitem filter-name">{{name}}</span>
+                  <span class="sidenav-subitem doc-count">({{count}})</span>
+                </a>
+              </li>
+            {{/each}}
+            {{#is current_filter.identifier 'knowledge_base'}}
+              <button class="see-all-filters" aria-hidden="true" aria-label="{{t 'show_more_categories'}}">{{t 'show_more_categories'}}</button>
+            {{/is}}
+            {{#is current_filter.identifier 'community'}}
+              <button class="see-all-filters" aria-hidden="true" aria-label="{{t 'show_more_topics'}}">{{t 'show_more_topics'}}</button>
+            {{/is}}
+          </ul>
+        </section>
+      {{/if}}
+      {{#if content_tag_filters}}
+        <section class="filters-in-section collapsible-sidebar">
+          <button type="button" class="collapsible-sidebar-toggle" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
+              <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+            </svg>
+          </button>
+          <h3 class="collapsible-sidebar-title sidenav-title">{{t 'filter_content_tag'}}</h3>
+          <ul class="multibrand-filter-list multibrand-filter-list--collapsed">
+            {{#each content_tag_filters}}
+            	{{#if selected}}
+                <li class="sidenav-tag">
+                  <div class="content-tag">
+                    <span class="label">{{name}}</span>
+                    <a href="{{url}}" aria-current="page">
+                      <span>
+                        <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false"  aria-hidden="true" >
+                            <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </section>
+      {{/if}}
+    </aside>
+    {{/if}}
+
+    <section id="main-content" class="search-results-column">
+      {{generative_answers}}
+      <h1 class="search-results-subheading">
+        {{#if results}}
+          {{#is current_filter.identifier 'unified'}}
+            {{#if content_tag_filters }}
+              {{#each (filter content_tag_filters on="selected" equals=true)}}
+                {{t 'results_content_tag' content_tag=name count=../results_count}}
+              {{/each}}
+            {{else}}
+              {{t 'results' query=query count=results_count}}
+            {{/if}}
+          {{else}}
+            {{#if content_tag_filters }}
+              {{#each (filter content_tag_filters on="selected" equals=true)}}
+                {{t 'results_content_tag' content_tag=name count=../results_count}}
+              {{/each}}
+            {{else}}
+              {{#unless current_subfilter.identifier}}
+                {{t 'results' query=query count=results_count}}
+              {{else}}
+                {{t 'results_with_scope' query=query count=results_count scope_name=current_subfilter.name}}
+              {{/unless}}
+            {{/if}}
+          {{/is}}
+        {{/if}}
+      </h1>
+      {{#if results}}
+        <ul class="search-results-list">
+          {{#each results}}
+            <li>
+              <article>
+                <header>
+                  <div class="search-result-title-container">
+                    <h2 class="search-result-title">
+                      <a href="{{url}}" {{#if is_external}} target="_blank" {{/if}}>
+                        {{title}}
+                        {{#if is_external}}
+                          <svg viewBox="0 0 12 12" height="12" id="zd-svg-icon-12-new-window-fill">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" d="M10.5 8.5V10c0 .28-.22.5-.5.5H2c-.28 0-.5-.22-.5-.5V2c0-.28.22-.5.5-.5h1.5M6 6l4-4"></path>
+                            <path fill="currentColor" d="M10.5 6.5a.47.47 0 0 1-.35-.15l-4.5-4.5a.474.474 0 0 1-.11-.54C5.62 1.12 5.8 1 6 1h4c.55 0 1 .45 1 1v4c0 .2-.12.38-.31.46-.06.03-.13.04-.19.04z"></path>
+                          </svg>
+                        {{/if}}
+                      </a>
+                    </h2>
+                    <div class="search-result-icons">
+                      {{#if vote_sum}}
+                        <span class="search-result-votes">
+                          <span class="visibility-hidden">
+                            {{t 'votes_sum' count=vote_sum}}
+                          </span>
+                          <span aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-result-votes-icon">
+                              <g fill="none" stroke="currentColor">
+                                <path stroke-linejoin="round" d="M10.77 4.5a.73.73 0 01.73.73C11.43 7 11.21 11.5 10 11.5H5a.5.5 0 01-.5-.5V4.5s1-.5 1-3a1 1 0 012 0v3z"/>
+                                <rect width="2" height="7" x=".5" y="4.5" rx=".5" ry=".5"/>
+                              </g>
+                            </svg>
+                            {{vote_sum}}
+                          </span>
+                        </span>
+                      {{/if}}
+                    </div>
+                  </div>
+                </header>
+                <p class="search-result-description">{{text}}</p>
+              </article>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+          <div class="no-results">
+            <svg width="103" height="103" viewBox="0 0 103 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M71 40.5C71 57.3447 57.3447 71 40.5 71C23.6553 71 10 57.3447 10 40.5C10 23.6553 23.6553 10 40.5 10C57.3447 10 71 23.6553 71 40.5ZM63.8656 72.3513C57.3221 77.1596 49.2427 80 40.5 80C18.6848 80 1 62.3152 1 40.5C1 18.6848 18.6848 1 40.5 1C62.3152 1 80 18.6848 80 40.5C80 49.243 77.1595 57.3226 72.3509 63.8661L100.243 91.7578C102.586 94.101 102.586 97.8999 100.243 100.243C97.8995 102.586 94.1005 102.586 91.7573 100.243L63.8656 72.3513Z" fill="#F2F2F2"/>
+              <path d="M63.8656 72.3513L64.5727 71.6442L63.9655 71.037L63.2734 71.5455L63.8656 72.3513ZM72.3509 63.8661L71.5451 63.274L71.0366 63.966L71.6438 64.5732L72.3509 63.8661ZM40.5 72C57.897 72 72 57.897 72 40.5H70C70 56.7924 56.7924 70 40.5 70V72ZM9 40.5C9 57.897 23.103 72 40.5 72V70C24.2076 70 11 56.7924 11 40.5H9ZM40.5 9C23.103 9 9 23.103 9 40.5H11C11 24.2076 24.2076 11 40.5 11V9ZM72 40.5C72 23.103 57.897 9 40.5 9V11C56.7924 11 70 24.2076 70 40.5H72ZM40.5 81C49.4629 81 57.7484 78.0873 64.4577 73.1572L63.2734 71.5455C56.8958 76.2319 49.0226 79 40.5 79V81ZM0 40.5C0 62.8675 18.1325 81 40.5 81V79C19.237 79 2 61.763 2 40.5H0ZM40.5 0C18.1325 0 0 18.1325 0 40.5H2C2 19.237 19.237 2 40.5 2V0ZM81 40.5C81 18.1325 62.8675 0 40.5 0V2C61.763 2 79 19.237 79 40.5H81ZM73.1568 64.4583C78.0872 57.7489 81 49.4631 81 40.5H79C79 49.0229 76.2318 56.8962 71.5451 63.274L73.1568 64.4583ZM71.6438 64.5732L99.5355 92.4649L100.95 91.0507L73.058 63.159L71.6438 64.5732ZM99.5355 92.4649C101.488 94.4175 101.488 97.5834 99.5355 99.536L100.95 100.95C103.683 98.2165 103.683 93.7844 100.95 91.0507L99.5355 92.4649ZM99.5355 99.536C97.5829 101.489 94.4171 101.489 92.4644 99.536L91.0502 100.95C93.7839 103.684 98.216 103.684 100.95 100.95L99.5355 99.536ZM92.4644 99.536L64.5727 71.6442L63.1585 73.0585L91.0502 100.95L92.4644 99.536Z" fill="#CCCCCC"/>
+            </svg>
+            <div class="headline">
+              {{t 'no_results_unified_start_new_search'}}
+            </div>
+            <div class="action-prompt">
+              {{t 'no_results_unified_enter_keywords'}}
+            </div>
+            <div class="action-prompt">
+              {{#link 'help_center'}}
+                {{t 'go_to_help_center'}} 
+              {{/link}}
+            </div> 
+          </div>
+      {{/if}}
+    </section>
+  </div>
+  {{pagination}}
+</div>

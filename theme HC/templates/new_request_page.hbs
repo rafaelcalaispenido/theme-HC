@@ -1,0 +1,58 @@
+<div class="container-divider"></div>
+<div class="container">
+  <div class="sub-nav">
+    {{breadcrumbs}}
+    <div class="search-container">
+      <i class="search-icon">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13.4842" cy="17.4842" r="6.48421" stroke="#0B0C0D" stroke-width="2"/>
+          <path d="M23.2928 28.7068C23.6833 29.0973 24.3165 29.0973 24.707 28.7068C25.0976 28.3163 25.0976 27.6831 24.707 27.2926L23.9999 27.9997L23.2928 28.7068ZM17.9368 21.9365L17.2297 22.6436L23.2928 28.7068L23.9999 27.9997L24.707 27.2926L18.6439 21.2294L17.9368 21.9365Z" fill="#0B0C0D"/>
+          <path d="M15.8194 5.73146C15.866 5.5429 16.134 5.5429 16.1806 5.73146V5.73146C16.313 6.26802 16.732 6.68697 17.2685 6.81943V6.81943C17.4571 6.86597 17.4571 7.13403 17.2685 7.18057V7.18057C16.732 7.31303 16.313 7.73198 16.1806 8.26854V8.26854C16.134 8.4571 15.866 8.4571 15.8194 8.26854V8.26854C15.687 7.73198 15.268 7.31303 14.7315 7.18057V7.18057C14.5429 7.13403 14.5429 6.86597 14.7315 6.81943V6.81943C15.268 6.68697 15.687 6.26802 15.8194 5.73146V5.73146Z" fill="#0B0C0D"/>
+          <path d="M22.7573 7.98317C22.8199 7.72973 23.1801 7.72973 23.2427 7.98317L23.3768 8.52641C23.5104 9.06732 23.9327 9.48965 24.4736 9.62318L25.0168 9.75729C25.2703 9.81985 25.2703 10.1801 25.0168 10.2427L24.4736 10.3768C23.9327 10.5104 23.5104 10.9327 23.3768 11.4736L23.2427 12.0168C23.1801 12.2703 22.8199 12.2703 22.7573 12.0168L22.6232 11.4736C22.4896 10.9327 22.0673 10.5104 21.5264 10.3768L20.9832 10.2427C20.7297 10.1801 20.7297 9.81985 20.9832 9.75729L21.5264 9.62318C22.0673 9.48965 22.4896 9.06732 22.6232 8.52641L22.7573 7.98317Z" fill="#0B0C0D"/>
+        </svg>
+      </i>
+      {{search submit=false}}
+    </div>
+  </div>
+
+  <h1>
+    {{t 'submit_a_request'}}
+  </h1>
+
+  <div id="main-content" class="form">
+    <div id="new-request-form"></div>
+  </div>
+</div>
+
+<script type="module">
+  import { renderNewRequestForm } from "new-request-form";
+
+  const container = document.getElementById("new-request-form");
+
+  const settings = {{json settings}};
+
+  const props = {
+    requestForm: {{json new_request_form}},
+    newRequestPath: {{json (page_path 'new_request')}},
+    parentId: {{json parent.id}},
+    parentIdPath: {{json parent.url}},
+    locale: {{json help_center.locale}},
+    baseLocale: {{json help_center.base_locale}},
+    hasAtMentions: {{json help_center.at_mentions_enabled}},
+    userRole: {{json user.role}},
+    userId: {{json user.id}},
+    brandId: {{json brand.id}},
+    organizations: {{json user.organizations}},
+    wysiwyg: true,
+    answerBotModal: {
+      answerBot: {{json answer_bot}},
+      hasRequestManagement: {{json help_center.request_management_enabled}},
+      isSignedIn: {{json signed_in}},
+      helpCenterPath: {{json (page_path 'help_center')}},
+      requestsPath: {{json (page_path 'requests')}},
+      requestPath: {{json (page_path 'request' id=answer_bot.request_id)}}
+    },
+  };
+
+  renderNewRequestForm(settings, props, container);
+</script>

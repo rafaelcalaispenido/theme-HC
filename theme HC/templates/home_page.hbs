@@ -1,0 +1,276 @@
+<h1 class="visibility-hidden">{{ help_center.name }}</h1>
+
+<section id="main-content" class="section hero">
+  {{#if settings.homepage_bg_enable}}
+    <span class="hero-background"></span>
+  {{/if}}
+  <div class="hero-inner">
+    <h2 data-lang="how_can_we_help" class="hero-h">Como podemos te ajudar?</h2>
+    <i class="search-icon">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13.4842" cy="17.4842" r="6.48421" stroke="#3A6489" stroke-width="2"/>
+        <path d="M23.2928 28.7068C23.6833 29.0973 24.3165 29.0973 24.707 28.7068C25.0976 28.3163 25.0976 27.6831 24.707 27.2926L23.9999 27.9997L23.2928 28.7068ZM17.9368 21.9365L17.2297 22.6436L23.2928 28.7068L23.9999 27.9997L24.707 27.2926L18.6439 21.2294L17.9368 21.9365Z" fill="#3A6489"/>
+        <path d="M15.7573 0.983174C15.8199 0.729731 16.1801 0.729732 16.2427 0.983175L16.5024 2.03521C16.6805 2.75642 17.2436 3.31953 17.9648 3.49757L19.0168 3.75729C19.2703 3.81985 19.2703 4.18015 19.0168 4.24271L17.9648 4.50243C17.2436 4.68047 16.6805 5.24358 16.5024 5.96479L16.2427 7.01683C16.1801 7.27027 15.8199 7.27027 15.7573 7.01683L15.4976 5.96479C15.3195 5.24358 14.7564 4.68047 14.0352 4.50243L12.9832 4.24271C12.7297 4.18015 12.7297 3.81985 12.9832 3.75729L14.0352 3.49757C14.7564 3.31953 15.3195 2.75642 15.4976 2.03521L15.7573 0.983174Z" fill="#3A6489"/>
+        <path d="M22.7573 7.98317C22.8199 7.72973 23.1801 7.72973 23.2427 7.98317L23.3768 8.52641C23.5104 9.06732 23.9327 9.48965 24.4736 9.62318L25.0168 9.75729C25.2703 9.81985 25.2703 10.1801 25.0168 10.2427L24.4736 10.3768C23.9327 10.5104 23.5104 10.9327 23.3768 11.4736L23.2427 12.0168C23.1801 12.2703 22.8199 12.2703 22.7573 12.0168L22.6232 11.4736C22.4896 10.9327 22.0673 10.5104 21.5264 10.3768L20.9832 10.2427C20.7297 10.1801 20.7297 9.81985 20.9832 9.75729L21.5264 9.62318C22.0673 9.48965 22.4896 9.06732 22.6232 8.52641L22.7573 7.98317Z" fill="#3A6489"/>
+      </svg>
+    </i>
+    {{search submit=false instant=settings.instant_search class='search search-full'}}
+  </div>
+</section>
+
+<style>
+.home-banner .cover img {
+    object-fit: contain;
+    width: 100%;
+}
+</style>
+
+<div class="container">
+
+    {{#if (compare settings.show_home_banner "==" "before-categories")}}
+    <section class="home-banner before-categories">
+        <a class="cover" href="https://enotas.com.br/portalnacional/" target="_blank">
+            <picture>
+                <source media="(min-width: 768px)" srcset="{{settings.banner_home_desktop}}">
+                <img src="{{settings.banner_home_mobile}}" alt="">
+            </picture>
+        </a>
+    </section>
+    {{/if}}
+
+  <section class="section knowledge-base">
+    {{#if settings.categories_custom_content}}
+      <h2 data-lang="categories_title"></h2>
+    {{/if}}
+    <section class="categories blocks">
+      <ul class="blocks-list {{settings.section_categories_appearance}} {{settings.section_categories_color_hover}}">
+        {{#each categories}}
+          {{#if ../has_multiple_categories}}
+            <li class="blocks-item">
+              <a href='{{url}}' class="blocks-item-link">
+                <span class="blocks-item-title">{{name}}</span>
+                <span class="blocks-item-description">{{excerpt description}}</span>
+              </a>
+            </li>
+          {{else}}
+            {{#each sections}}
+              <li class="blocks-item">
+                <a href='{{url}}' class="blocks-item-link">
+                  <span class="blocks-item-title">
+                    {{name}}
+                  </span>
+                  <span class="blocks-item-description">{{excerpt description}}</span>
+                </a>
+              </li>
+            {{/each}}
+          {{/if}}
+        {{/each}}
+      </ul>
+      {{pagination}}
+    </section>
+
+    {{#if settings.section_categories_show_icon}}
+      <script>
+        const categoryIcons = [
+          { title: 'Primeiros passos', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="1" width="28" height="30" rx="5" stroke="#0B0C0D" stroke-width="2"/>
+                  <path d="M6 12L8 14L12 10" stroke="#0B0C0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 21L8 23L12 19" stroke="#0B0C0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 12H25" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M17 21H25" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round"/>
+                  </svg>` },
+          { title: 'Emissão de nota fiscal', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="11" width="16" height="3" rx="1.5" fill="#0B0C0D"/>
+                  <rect x="8" y="17" width="16" height="3" rx="1.5" fill="#0B0C0D"/>
+                  <rect x="8" y="23" width="16" height="3" rx="1.5" fill="#0B0C0D"/>
+                  <rect x="4" y="1" width="24" height="30" rx="5" stroke="#0B0C0D" stroke-width="2"/>
+                  </svg>` },
+          { title: 'Funcionalidades', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_40004337_4857)">
+                  <path d="M29 23.4199L16 30.8477L3 23.4199L3 8.58008L16 1.15137L29 8.58008L29 23.4199Z" stroke="#0B0C0D" stroke-width="2"/>
+                  <circle cx="16" cy="16" r="6" stroke="#0B0C0D" stroke-width="2"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_40004337_4857">
+                  <rect width="32" height="32" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>` },
+          { title: 'Integrações', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_40004337_4920)">
+                  <mask id="path-1-inside-1_40004337_4920" fill="white">
+                  <rect width="15" height="15" rx="1"/>
+                  </mask>
+                  <rect width="15" height="15" rx="1" stroke="#0B0C0D" stroke-width="4" mask="url(#path-1-inside-1_40004337_4920)"/>
+                  <mask id="path-2-inside-2_40004337_4920" fill="white">
+                  <rect y="17" width="15" height="15" rx="1"/>
+                  </mask>
+                  <rect y="17" width="15" height="15" rx="1" stroke="#0B0C0D" stroke-width="4" mask="url(#path-2-inside-2_40004337_4920)"/>
+                  <mask id="path-3-inside-3_40004337_4920" fill="white">
+                  <rect x="17" width="15" height="15" rx="1"/>
+                  </mask>
+                  <rect x="17" width="15" height="15" rx="1" stroke="#0B0C0D" stroke-width="4" mask="url(#path-3-inside-3_40004337_4920)"/>
+                  <mask id="path-4-inside-4_40004337_4920" fill="white">
+                  <rect x="17" y="17" width="15" height="15" rx="1"/>
+                  </mask>
+                  <rect x="17" y="17" width="15" height="15" rx="1" stroke="#0B0C0D" stroke-width="4" mask="url(#path-4-inside-4_40004337_4920)"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_40004337_4920">
+                  <rect width="32" height="32" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                  ` },
+          { title: 'Dúvidas frequentes', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_40004342_4962)">
+                  <rect x="1" y="1" width="30" height="30" rx="15" stroke="#0B0C0D" stroke-width="2"/>
+                  <path d="M10 13V12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12V12.7143C22 15.0812 20.0812 17 17.7143 17V17C16.7675 17 16 17.7675 16 18.7143V21" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M16 26V25" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_40004342_4962">
+                  <rect width="32" height="32" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>` },
+          { title: 'Rejeições e erros', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_40004337_4871)">
+                  <path d="M30.3818 31H1.61816L16 2.23633L30.3818 31Z" stroke="#0B0C0D" stroke-width="2"/>
+                  <path d="M16 15V21" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="16" cy="26" r="2" fill="#0B0C0D"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_40004337_4871">
+                  <rect width="32" height="32" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>` },
+          { title: 'Liberação para emissão', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_40004337_4865)">
+                  <rect x="1" y="1" width="30" height="30" rx="5" stroke="#0B0C0D" stroke-width="2"/>
+                  <path d="M10 16L14 20L22 12.5" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_40004337_4865">
+                  <rect width="32" height="32" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>` },
+          { title: 'Start', 
+            icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="7" y="11" width="17" height="3" rx="1.5" fill="#0B0C0D"/>
+                    <rect x="7" y="17" width="17" height="3" rx="1.5" fill="#0B0C0D"/>
+                    <rect x="7" y="23" width="17" height="3" rx="1.5" fill="#0B0C0D"/>
+                    <rect x="3" y="1" width="25" height="30" rx="5" stroke="#0B0C0D" stroke-width="2"/>
+                  </svg>` },
+        ];
+
+        // percorre todos os cards
+        document.querySelectorAll('.blocks-item').forEach(card => {
+          const titleEl = card.querySelector('.blocks-item-title');
+          if (!titleEl) return;
+
+          const titulo = titleEl.textContent.trim();
+
+          // verifica se o título está no mapeamento
+          const iconeObj = categoryIcons.find(i => i.title === titulo);
+          if (iconeObj) {
+            // cria um wrapper para o ícone e injeta
+            const tagIcon = document.createElement('i');
+            tagIcon.classList.add('blocks-item-icon');
+            tagIcon.innerHTML = iconeObj.icon;
+
+            // insere o ícone antes ou depois do título
+            titleEl.prepend(tagIcon);
+          }
+        });
+      </script>
+      {{else}}
+      <style>
+        .blocks-item-title {
+          padding-top: initial!important;
+        }
+      </style>
+    {{/if}}
+    
+    {{#if settings.show_explore_categories}}
+      <div class="explore-categories-actions">
+        <a class="button" href="/hc/categories/preview">
+          <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 1.5C2.05964 1.5 1.5 2.05964 1.5 2.75V14.75C1.5 15.4404 2.05964 16 2.75 16H15.75C16.4404 16 17 15.4404 17 14.75V5.75C17 5.05964 16.4404 4.5 15.75 4.5H11.2852C10.7001 4.5 10.1537 4.20757 9.8291 3.72073L8.42283 1.61133C8.37646 1.54178 8.2984 1.5 8.21482 1.5H2.75ZM0 2.75C0 1.23122 1.23122 0 2.75 0H8.21482C8.79993 0 9.34634 0.292427 9.6709 0.779275L11.0772 2.88867C11.1235 2.95822 11.2016 3 11.2852 3H15.75C17.2688 3 18.5 4.23122 18.5 5.75V14.75C18.5 16.2688 17.2688 17.5 15.75 17.5H2.75C1.23122 17.5 0 16.2688 0 14.75V2.75Z" fill="#0B0C0D"/>
+          </svg>
+          Explorar categorias
+        </a>
+      </div>
+    {{/if}}
+  
+  {{#if (compare settings.show_home_banner "==" "after-categories")}}
+    <section class="home-banner after-categories">
+      <a class="cover" href="https://enotas.com.br/portalnacional/" target="_blank">
+        <picture>
+          <source media="(min-width: 768px)" srcset="{{settings.banner_home_desktop}}">
+          <img src="{{settings.banner_home_mobile}}" alt="">
+        </picture>
+      </a>
+    </section>
+  {{/if}}
+  
+    {{#if promoted_articles}}
+      <section class="articles">
+        <h2>{{t 'promoted_articles'}}</h2>
+        <ul class="article-list promoted-articles">
+          {{#each promoted_articles}}
+            <li class="promoted-articles-item">
+                <a href="{{url}}">
+                  {{title}}
+                  {{#if internal}}
+                    <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 7C0 5.89543 0.895431 5 2 5H11C12.1046 5 13 5.89543 13 7V13C13 14.1046 12.1046 15 11 15H2C0.89543 15 0 14.1046 0 13V7Z" fill="#0B0C0D"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 2C5.11929 2 4 3.11929 4 4.5V6H2V4.5C2 2.01472 4.01472 0 6.5 0C8.98528 0 11 2.01472 11 4.5V6H9V4.5C9 3.11929 7.88071 2 6.5 2Z" fill="#0B0C0D"/>
+                    </svg>
+                  {{/if}}
+                </a>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+  </section>
+
+  {{#if settings.show_community}}
+    {{#if help_center.community_enabled}}
+      <section class="section home-section community">
+        <h2>{{t 'community'}}</h2>
+        {{#link 'community' class='community-link'}}
+          {{t 'join_conversation'}}
+        {{/link}}
+      </section>
+    {{/if}}
+  {{/if}}
+
+  {{#if settings.show_recent_activity}}
+  <section class="section home-section activity">
+      {{recent_activity}}
+  </section>
+  {{/if}}
+</div>
+
+{{#if settings.hero_h_animated}}
+  <script>
+    document.querySelector('.hero-h').classList.add('animated-color');
+  </script>
+{{/if}}
+
+{{#if settings.search_form_animated}}
+  <script>
+    document.querySelector('form.search').classList.add('animated-border');
+  </script>
+{{/if}}

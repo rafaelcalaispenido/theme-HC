@@ -1,0 +1,315 @@
+<div class="container">
+  <div class="request-breadcrumbs">{{breadcrumbs}}</div>
+
+  <h1 class="request-title">{{request.subject}}</h1>
+
+  <div id="main-content" class="request-container">
+    <section class="request-main">
+      {{satisfaction}}
+      <ul class="comment-list">
+        {{#each comments}}
+          <li id="{{anchor}}" class="comment">
+            <div class="comment-wrapper">
+              <div class="comment-info">
+                <div class="comment-author">
+                  <div class="avatar comment-avatar">
+                    {{#if author.agent}}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" aria-hidden="true" viewBox="0 0 12 12" class="icon-agent" aria-label="{{t 'team_member' name=author.name}}">
+                        <path fill="currentColor" d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.3 7H3.7c-.3 0-.4-.3-.3-.5C3.9 7.6 4.9 7 6 7s2.1.6 2.6 1.5c.1.2 0 .5-.3.5z"/>
+                      </svg>
+                    {{/if}}
+                    <img src="{{author.avatar_url}}" alt="" class="user-avatar"/>
+                  </div>
+
+                  <div class="comment-meta">
+                    <span title="{{author.name}}">
+                      {{#link 'user_profile' id=author.id}}
+                        {{author.name}}
+                      {{/link}}
+                    </span>
+
+                    <div class="meta-group">
+                      <span class="meta-data">{{date created_at timeago=true}}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <section class="comment-body">{{body}}</section>
+
+                {{#if attachments}}
+                  <ul class="attachments">
+                    {{#each attachments}}
+                      <li class="attachment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="attachment-icon">
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" d="M9.5 4v7.7c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5V3C6.5 1.6 7.6.5 9 .5s2.5 1.1 2.5 2.5v9c0 1.9-1.6 3.5-3.5 3.5S4.5 13.9 4.5 12V4"/>
+                        </svg>
+                        <a href="{{url}}" target="_blank">{{name}}</a>
+                        <div class="attachment-meta meta-group">
+                          <span class="attachment-meta-item meta-data">{{size}}</span>
+                          <a href="{{url}}" target="_blank" class="attachment-meta-item meta-data">{{t 'download'}}</a>
+                        </div>
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </div>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+
+      {{pagination}}
+
+      <div class="request-follow-up">
+        {{comment_callout}}
+      </div>
+
+      {{#form 'comment' class='comment-form hbs-form'}}
+        <div class="avatar comment-avatar">
+          {{user_avatar class='user-avatar'}}
+        </div>
+
+        <div class="comment-container">
+          <button type="button" class="comment-show-container {{#validate 'body'}}hidden{{/validate}}">
+            {{t 'add_to_conversation'}}
+          </button>
+
+          <div class="comment-fields {{#validate 'body'}}shown{{/validate}}">
+            {{#if help_center.request_ccs_enabled}}
+              <div class="comment-ccs form-field">
+               {{token_field 'ccs' class='ccs-input'}}
+              </div>
+            {{/if}}
+
+            {{wysiwyg 'body' rows='7'}}
+
+            <div class="comment-attachments">
+              {{upload}}
+            </div>
+          </div>
+
+          <div class="comment-form-controls">
+            {{checkbox 'mark_as_solved'}}
+
+            {{#if request.can_be_marked_as_solved}}
+              <button type="button" class="button-large button-secondary mark-as-solved"
+                data-solve-translation="{{t 'mark_as_solved'}}"
+                data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}">
+                {{t 'mark_as_solved'}}
+              </button>
+            {{/if}}
+
+            <span class="request-submit-comment {{#validate 'body'}}shown{{/validate}}">
+              {{input type='submit' class="button button-large"}}
+            </span>
+          </div>
+        </div>
+      {{/form}}
+      {{#if settings.whatsapp_ticket_link}}
+        <div class="request-ticket-for-whatsapp">
+          <p>Continuar este atendimento pelo WhatsApp</p>
+          <a class="whatsapp-ticket-link button">
+            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.09887 1.60273C2.15046 1.60273 2.21131 1.60567 2.2659 1.72969C2.30224 1.81032 2.36109 1.95532 2.41016 2.07618C2.45127 2.17754 2.48551 2.26193 2.49381 2.27715C2.51197 2.31331 2.52424 2.3588 2.49992 2.40706C2.48425 2.4347 2.47359 2.45739 2.46058 2.47965C2.45079 2.49639 2.43965 2.5129 2.42401 2.53108C2.41267 2.54428 2.40072 2.55866 2.38864 2.5732C2.36196 2.60533 2.33457 2.63829 2.31154 2.66116C2.272 2.69749 2.23563 2.73677 2.27814 2.81234L2.28454 2.82257C2.33664 2.9058 2.48209 3.1383 2.69424 3.32644C2.93808 3.54324 3.14842 3.63235 3.25217 3.67629C3.27 3.68384 3.2847 3.69008 3.29588 3.69538C3.36881 3.73171 3.41429 3.72566 3.4568 3.67723C3.50244 3.62896 3.64518 3.46256 3.69379 3.38697C3.7424 3.31432 3.79105 3.32644 3.86082 3.35065C3.93078 3.37502 4.29529 3.55631 4.3712 3.59262C4.44414 3.63188 4.49588 3.65007 4.5141 3.68033C4.53225 3.71061 4.53225 3.86179 4.47156 4.03407C4.40773 4.20962 4.10394 4.37294 3.96731 4.38799C3.95552 4.3893 3.9438 4.39085 3.93181 4.39245C3.80477 4.40932 3.64837 4.43009 3.07096 4.20358C2.36794 3.92639 1.90429 3.24227 1.81043 3.10379C1.8029 3.09268 1.79776 3.08508 1.79505 3.08148C1.75868 3.03324 1.49126 2.67932 1.49126 2.31347C1.49126 1.96991 1.65987 1.79154 1.7384 1.70846C1.74353 1.70302 1.74828 1.69801 1.75258 1.69337C1.82235 1.61778 1.90439 1.59961 1.953 1.59961C2.00459 1.59961 2.05323 1.59961 2.09887 1.60273Z" fill="#0B0C0D"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.425369 4.46069L0 6L1.586 5.58572C2.02316 5.82438 2.51442 5.94925 3.01373 5.94863C4.66042 5.94863 6 4.61483 6 2.97569C6 2.18036 5.6902 1.43345 5.12513 0.870941C4.56003 0.308412 3.80968 0 3.01076 0C1.36406 0 0.0243225 1.33364 0.0274557 2.97569C0.0266481 3.4966 0.16383 4.0086 0.425369 4.46069ZM1.74708 5.10487L1.65596 5.05037L1.65561 5.05054L0.710811 5.29859L0.963016 4.38526L0.905294 4.29135C0.656061 3.89834 0.525405 3.44168 0.525405 2.97588C0.525405 1.61506 1.6404 0.505088 3.01059 0.505088C3.67292 0.505088 4.29872 0.765229 4.76692 1.23072C5.23476 1.69655 5.49291 2.31943 5.49291 2.9788C5.49291 4.33961 4.37795 5.44958 3.01089 5.44958C2.56597 5.44925 2.12933 5.33016 1.74708 5.10487Z" fill="#0B0C0D"/>
+            </svg>
+            Abrir WhatsApp
+          </a>
+          <script>
+            function getTicketMetaValue(id) {
+              var el = document.querySelector('[data-tag-id="' + id + '"]');
+              return el ? el.textContent.trim() : '';
+            }
+
+            function wpp_buildTicketUrl() {
+              var wpp_userName = getTicketMetaValue('user_name');
+              var wpp_ticketId = getTicketMetaValue('ticket_id');
+
+              var wpp_message = 'Olá, meu nome é ' + wpp_userName + ' e quero falar sobre o ticket ' + wpp_ticketId + '.';
+              var wpp_encodedMessage = encodeURIComponent(wpp_message);
+              var wpp_phone = '553197052109';
+
+              return 'https://wa.me/' + wpp_phone + '?text=' + wpp_encodedMessage;
+            }
+
+            function wpp_updateTicketLink() {
+              var wpp_link = document.querySelector('.whatsapp-ticket-link');
+              if (wpp_link) {
+                wpp_link.setAttribute('href', wpp_buildTicketUrl());
+                wpp_link.setAttribute('target', '_blank');
+                wpp_link.setAttribute('rel', 'noopener');
+              }
+            }
+
+            document.addEventListener('DOMContentLoaded', wpp_updateTicketLink);
+          </script>
+        </div>
+      {{/if}}
+    </section>
+
+    <section class="request-sidebar collapsible-sidebar">
+      <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="request-sidebar-title" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
+          <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+        </svg>
+      </button>
+      <h2 id="request-sidebar-title" class="collapsible-sidebar-title">
+        {{t 'ticket_details'}}
+      </h2>
+      <div class="collapsible-sidebar-body">
+        {{#if request.followup_source_id}}
+          <dl class="request-details">
+            <dt>{{t 'followup'}}</dt>
+            <dd>{{link 'request' id=request.followup_source_id}}</dd>
+          </dl>
+        {{/if}}
+
+        {{#with satisfaction_response}}
+          {{#with rating}}
+            <dl class="request-details">
+              <dt>{{t 'rating'}}</dt>
+              <dd>
+                <div>
+                  {{#is scale_type 'numeric'}}
+                    {{t 'numerical_rating' value=value max_value=max_value}}
+                  {{else}}
+                    {{scale_value}}
+                  {{/is}}
+                </div>
+
+                {{#link 'survey_response' id=../id}}
+                  {{#if ../editable}}
+                    {{t 'edit_feedback'}}
+                  {{else}}
+                    {{t 'view_feedback'}}
+                  {{/if}}
+                {{/link}}
+              </dd>
+            </dl>
+          {{else}}
+            {{#if editable}}
+              <dl class="request-details">
+                <dt>{{t 'rating'}}</dt>
+                <dd>
+                  {{#link 'survey_response' id=id}}
+                    {{t 'add_feedback'}}
+                  {{/link}}
+                </dd>
+              </dl>
+            {{/if}}
+          {{/with}}
+        {{/with}}
+
+        <dl class="request-details">
+          <dt>{{t 'requester'}}</dt>
+          <dd data-tag-id="user_name">{{request.requester.name}}</dd>
+
+          <dt>{{t 'created'}}</dt>
+          <dd>{{date request.created_at}}</dd>
+
+          <dt>{{t 'last_activity'}}</dt>
+          <dd>{{date request.updated_at}}</dd>
+
+          {{#if collaborators}}
+            <dt>{{t 'ccs'}}</dt>
+            <dd>
+              <ul class="request-collaborators">
+                {{#each collaborators}}
+                  <li title="{{name}}">{{name}}</li>
+                {{/each}}
+              </ul>
+            </dd>
+          {{/if}}
+        </dl>
+
+        <dl class="request-details">
+          {{#if assignee}}
+            <dt>{{t 'assignee'}}</dt>
+            <dd>
+              {{assignee.name}}
+            </dd>
+          {{/if}}
+
+          <dt>{{t 'id'}}</dt>
+          <dd data-tag-id="ticket_id">#{{request.id}}</dd>
+
+          {{#form 'organization' id='request-organization' class='hbs-form'}}
+            <dt>{{t 'organization'}}</dt>
+            <dd>{{select 'organization'}}</dd>
+          {{/form}}
+
+          {{#if group}}
+            <dt>{{t 'group'}}</dt>
+            <dd>
+              {{group.name}}
+            </dd>
+          {{/if}}
+
+          <dt>{{t 'status'}}</dt>
+          <dd>
+            <span class="status-label status-label-request status-label-{{request.status}}" title="{{request.status_description}}">
+              {{request.status_name}}
+            </span>
+          </dd>
+
+          {{#if request.type}}
+            <dt>{{request.type_title}}</dt>
+            <dd>
+              {{request.type_name}}
+              {{#is request.type 'task'}}
+                {{t 'task_due_date' due_date=request.due_date}}
+              {{/is}}
+            </dd>
+          {{/if}}
+
+          {{#if request.priority}}
+            <dt>{{request.priority_title}}</dt>
+            <dd>
+              {{request.priority_name}}
+            </dd>
+          {{/if}}
+
+          {{#each custom_fields}}
+            <dt>{{title}}</dt>
+            <dd>
+              {{value}}
+            </dd>
+          {{/each}}
+        </dl>
+
+        {{#if attachments}}
+          <dl class="request-details request-attachments">
+            <dt>{{t 'attachments_heading'}}</dt>
+            <dd>
+              <ul class="attachments">
+                {{#each attachments}}
+                  <li class="attachment-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="attachment-icon">
+                      <path fill="none" stroke="currentColor" stroke-linecap="round" d="M9.5 4v7.7c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5V3C6.5 1.6 7.6.5 9 .5s2.5 1.1 2.5 2.5v9c0 1.9-1.6 3.5-3.5 3.5S4.5 13.9 4.5 12V4"/>
+                    </svg>
+                    <a href="{{url}}" target="_blank">{{name}}</a>
+                    <div class="attachment-meta meta-group">
+                      <span class="attachment-meta-item meta-data">{{size}}</span>
+                      <a href="{{url}}" target="_blank" class="attachment-meta-item meta-data">{{t 'download'}}</a>
+                    </div>
+                  </li>
+                {{/each}}
+              </ul>
+            </dd>
+          </dl>
+        {{/if}}
+      </div>
+    </section>
+  </div>
+</div>
+
+{{#if settings.show_comment_form}}
+  <script>
+    document.querySelector('.comment-fields').classList.add('shown');
+    document.querySelector('.request-submit-comment').classList.add('shown');
+    document.querySelector('.comment-show-container').style.display = 'none';
+  </script>
+{{/if}}
