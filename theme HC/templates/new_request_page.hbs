@@ -32,7 +32,15 @@
       <span class="notice-board-chevron" aria-hidden="true">&#9650;</span>
     </button>
     <div id="notice-board-body" class="notice-board-body">
-      <div id="notice-board-content" class="notice-board-loading">Carregando avisos...</div>
+      <div class="notice-item">
+        <p><strong>Instabilidade no Portal Nacional da NFS-e</strong></p>
+        <p>Uma instabilidade pode estar afetando a obtenção do XML e do PDF das notas fiscais em alguns municípios.</p>
+        <p>O impacto ocorre principalmente para clientes que utilizam autenticação por usuário e senha. Clientes que utilizam Certificado Digital A1 não estão sendo afetados.</p>
+        <p>Nossa equipe já está atuando na análise do cenário para restabelecer o funcionamento o mais breve possível.</p>
+        <p>Enquanto isso, recomendamos a utilização de um Certificado Digital A1, que proporciona uma comunicação mais estável com o Portal Nacional.</p>
+        <p>Caso não possua um Certificado Digital A1, poderá adquirir com o nosso <a href="https://enotas.com.br/certificado/brasil-certificados-digitais/">parceiro</a>.</p>
+        <p>Agradecemos pela compreensão.</p>
+      </div>
     </div>
   </div>
 
@@ -103,18 +111,6 @@
     padding: 16px 0;
   }
 
-  .notice-item h3 {
-    font-size: 0.95em;
-    font-weight: 700;
-    margin: 0 0 10px;
-  }
-
-  .notice-divider {
-    border: none;
-    border-top: 1px solid #c8c8c8;
-    margin: 0;
-  }
-
   .notice-item p {
     margin: 0 0 10px;
     line-height: 1.5;
@@ -129,12 +125,6 @@
     color: $link_color;
     text-decoration: underline;
   }
-
-  .notice-board-loading {
-    padding: 16px 0;
-    font-size: 0.9em;
-    color: #888;
-  }
 </style>
 
 <script>
@@ -147,30 +137,6 @@
       toggle.setAttribute("aria-expanded", String(!expanded));
       body.classList.toggle("is-collapsed", expanded);
     });
-  })();
-</script>
-
-<script>
-  (function () {
-    // SUBSTITUA pelo ID do artigo que você criou no Guide
-    var ARTICLE_ID = "47177848990733";
-
-    var content = document.getElementById("notice-board-content");
-
-    fetch("/api/v2/help_center/articles/" + ARTICLE_ID + ".json")
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        var html = data.article.body;
-        var parts = html.split(/<hr\s*\/?>/i).map(function (p) { return p.trim(); }).filter(Boolean);
-        var rendered = parts.map(function (p) {
-          return '<div class="notice-item">' + p + '</div>';
-        }).join('<hr class="notice-divider" />');
-        content.className = "";
-        content.innerHTML = rendered;
-      })
-      .catch(function () {
-        content.innerHTML = '<div class="notice-item"><p>Não foi possível carregar os avisos no momento.</p></div>';
-      });
   })();
 </script>
 
