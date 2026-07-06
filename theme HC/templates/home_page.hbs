@@ -72,7 +72,7 @@
     {{#if settings.section_categories_show_icon}}
       <script>
         const categoryIcons = [
-          { title: 'Primeiros passos', 
+          { title: 'Primeiros passos',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="2" y="1" width="28" height="30" rx="5" stroke="#0B0C0D" stroke-width="2"/>
                   <path d="M6 12L8 14L12 10" stroke="#0B0C0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -80,14 +80,14 @@
                   <path d="M17 12H25" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round"/>
                   <path d="M17 21H25" stroke="#0B0C0D" stroke-width="3" stroke-linecap="round"/>
                   </svg>` },
-          { title: 'Emissão de nota fiscal', 
+          { title: 'Emissão de nota fiscal',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="8" y="11" width="16" height="3" rx="1.5" fill="#0B0C0D"/>
                   <rect x="8" y="17" width="16" height="3" rx="1.5" fill="#0B0C0D"/>
                   <rect x="8" y="23" width="16" height="3" rx="1.5" fill="#0B0C0D"/>
                   <rect x="4" y="1" width="24" height="30" rx="5" stroke="#0B0C0D" stroke-width="2"/>
                   </svg>` },
-          { title: 'Funcionalidades', 
+          { title: 'Funcionalidades',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_40004337_4857)">
                   <path d="M29 23.4199L16 30.8477L3 23.4199L3 8.58008L16 1.15137L29 8.58008L29 23.4199Z" stroke="#0B0C0D" stroke-width="2"/>
@@ -99,7 +99,7 @@
                   </clipPath>
                   </defs>
                   </svg>` },
-          { title: 'Integrações', 
+          { title: 'Integrações',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_40004337_4920)">
                   <mask id="path-1-inside-1_40004337_4920" fill="white">
@@ -126,7 +126,7 @@
                   </defs>
                   </svg>
                   ` },
-          { title: 'Dúvidas frequentes', 
+          { title: 'Dúvidas frequentes',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_40004342_4962)">
                   <rect x="1" y="1" width="30" height="30" rx="15" stroke="#0B0C0D" stroke-width="2"/>
@@ -139,7 +139,7 @@
                   </clipPath>
                   </defs>
                   </svg>` },
-          { title: 'Rejeições e erros', 
+          { title: 'Rejeições e erros',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_40004337_4871)">
                   <path d="M30.3818 31H1.61816L16 2.23633L30.3818 31Z" stroke="#0B0C0D" stroke-width="2"/>
@@ -152,7 +152,7 @@
                   </clipPath>
                   </defs>
                   </svg>` },
-          { title: 'Liberação para emissão', 
+          { title: 'Liberação para emissão',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_40004337_4865)">
                   <rect x="1" y="1" width="30" height="30" rx="5" stroke="#0B0C0D" stroke-width="2"/>
@@ -164,7 +164,7 @@
                   </clipPath>
                   </defs>
                   </svg>` },
-          { title: 'Start', 
+          { title: 'Start',
             icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="7" y="11" width="17" height="3" rx="1.5" fill="#0B0C0D"/>
                     <rect x="7" y="17" width="17" height="3" rx="1.5" fill="#0B0C0D"/>
@@ -200,7 +200,7 @@
         }
       </style>
     {{/if}}
-    
+
     {{#if settings.show_explore_categories}}
       <div class="explore-categories-actions">
         <a class="button" href="/hc/categories/preview">
@@ -211,7 +211,7 @@
         </a>
       </div>
     {{/if}}
-  
+
   {{#if (compare settings.show_home_banner "==" "after-categories")}}
     <section class="home-banner after-categories">
       <a class="cover" href="https://enotas.com.br/portalnacional/" target="_blank">
@@ -222,7 +222,7 @@
       </a>
     </section>
   {{/if}}
-  
+
     {{#if promoted_articles}}
       <section class="articles">
         <h2>{{t 'promoted_articles'}}</h2>
@@ -257,6 +257,9 @@
   {{/if}}
 
   {{#if settings.show_recent_activity}}
+  <style>
+    section.recent-activity-item:has(a[href*="47177848990733"]) { display: none !important; }
+  </style>
   <section class="section home-section activity">
       {{recent_activity}}
   </section>
