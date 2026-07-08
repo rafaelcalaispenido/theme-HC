@@ -19,42 +19,37 @@
     {{t 'submit_a_request'}}
   </h1>
 
-  <div class="notice-board">
-    <button type="button" class="notice-board-toggle" aria-expanded="true" aria-controls="notice-board-body">
-      <span class="notice-board-title">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
-          <rect x="9" y="8.5" width="2" height="6" rx="1" fill="currentColor"/>
-          <rect x="9" y="5.5" width="2" height="2" rx="1" fill="currentColor"/>
-        </svg>
-        Quadro de avisos
-      </span>
-      <span class="notice-board-chevron" aria-hidden="true">&#9650;</span>
-    </button>
-    <div id="notice-board-body" class="notice-board-body">
-      <div class="notice-item">
-        <p><strong>Instabilidade no Portal Nacional da NFS-e</strong></p>
-        <p>Uma instabilidade pode estar afetando a obtenção do XML e do PDF das notas fiscais em alguns municípios.</p>
-        <p>O impacto ocorre principalmente para clientes que utilizam autenticação por usuário e senha. Clientes que utilizam Certificado Digital A1 não estão sendo afetados.</p>
-        <p>Nossa equipe já está atuando na análise do cenário para restabelecer o funcionamento o mais breve possível.</p>
-        <p>Enquanto isso, recomendamos a utilização de um Certificado Digital A1, que proporciona uma comunicação mais estável com o Portal Nacional.</p>
-        <p>Caso não possua um Certificado Digital A1, poderá adquirir com o nosso <a href="https://enotas.com.br/certificado/brasil-certificados-digitais/">parceiro</a>.</p>
-        <p>Agradecemos pela compreensão.</p>
+  <div id="main-content" class="form">
+    <div class="notice-board">
+      <button type="button" class="notice-board-toggle" aria-expanded="true" aria-controls="notice-board-body">
+        <span class="notice-board-title">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
+            <rect x="9" y="8.5" width="2" height="6" rx="1" fill="currentColor"/>
+            <rect x="9" y="5.5" width="2" height="2" rx="1" fill="currentColor"/>
+          </svg>
+          Quadro de avisos
+        </span>
+        <span class="notice-board-chevron" aria-hidden="true">&#9650;</span>
+      </button>
+      <div id="notice-board-body" class="notice-board-body">
+        <div class="notice-item notice-empty">
+          <p>No momento não há avisos disponíveis.</p>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div id="main-content" class="form">
     <div id="new-request-form"></div>
   </div>
 </div>
 
 <style>
   .notice-board {
+    width: 100%;
     border: 1px solid $light_border_color;
     border-radius: 8px;
     margin-bottom: 28px;
     overflow: hidden;
+    box-sizing: border-box;
   }
 
   .notice-board-toggle {
