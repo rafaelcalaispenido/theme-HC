@@ -248,6 +248,23 @@
     text-align: center;
   }
 
+  /* Screenshots */
+  .screenshot-group { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+  .screenshot-item { display: flex; flex-direction: column; gap: 6px; }
+  .screenshot-label {
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+  .screenshot-item img {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: block;
+  }
+
   /* Theme toggle */
   .theme-toggle {
     position: fixed;
@@ -281,9 +298,10 @@
         <div class="step-content">
           <p class="step-title">Acesse o Guide e abra o tema</p>
           <div class="step-body">
-            <p>No Zendesk, clique em <strong>Conhecimento</strong> no menu superior. Em seguida, no menu lateral esquerdo, clique no ícone de <strong>Central de Ajuda</strong> para ir à área de temas.</p>
-            <p>Role a página até encontrar <strong>Tema em uso</strong> — lá aparece o card do tema <em>Help Desk - eNotas</em>. Clique em <strong>Personalizar</strong> (canto inferior direito do card).</p>
-            <p>Na tela de personalização, clique em <strong>Editar código</strong> (canto inferior direito da prévia).</p>
+            <p><strong>1a.</strong> No Zendesk, clique em <strong>Conhecimento</strong> no menu superior. Você verá a barra de administrador com a opção <strong>Administrador do Conhecimento</strong>.</p>
+            <p><strong>1b.</strong> No painel de personalização, clique no ícone de <strong>Central de Ajuda</strong> no menu lateral esquerdo.</p>
+            <p><strong>1c.</strong> Role a página até encontrar <strong>Tema em uso</strong> — lá aparece o card do tema <em>Help Desk - eNotas</em>. Clique em <strong>Personalizar</strong>.</p>
+            <p><strong>1d.</strong> Na tela de personalização, clique em <strong>Editar código</strong> no canto inferior direito da prévia.</p>
           </div>
         </div>
       </div>
@@ -291,11 +309,31 @@
         <div class="path">
           <span class="path-item">Conhecimento</span>
           <span class="path-sep">›</span>
-          <span class="path-item">Central de ajuda</span>
+          <span class="path-item">Administrador do Conhecimento</span>
+          <span class="path-sep">›</span>
+          <span class="path-item">Painel de personalização</span>
           <span class="path-sep">›</span>
           <span class="path-item">Tema em uso → Personalizar</span>
           <span class="path-sep">›</span>
           <span class="path-item">Editar código</span>
+        </div>
+        <div class="screenshot-group">
+          <div class="screenshot-item">
+            <span class="screenshot-label">1a — Administrador do Conhecimento</span>
+            <img src="img/passo1a.png" alt="Tela inicial do Zendesk com menu Conhecimento">
+          </div>
+          <div class="screenshot-item">
+            <span class="screenshot-label">1b — Painel de personalização</span>
+            <img src="img/passo1b.png" alt="Painel de personalização da Central de Ajuda">
+          </div>
+          <div class="screenshot-item">
+            <span class="screenshot-label">1c — Tema em uso / Personalizar</span>
+            <img src="img/passo1c.png" alt="Card do tema eNotas com botão Personalizar">
+          </div>
+          <div class="screenshot-item">
+            <span class="screenshot-label">1d — Editar código</span>
+            <img src="img/passo1d.png" alt="Tela de personalização com botão Editar código">
+          </div>
         </div>
       </div>
     </div>
@@ -311,9 +349,14 @@
           </div>
         </div>
       </div>
-      <div class="step-detail">
+      <div class="step-detail" style="display:flex;flex-direction:column;gap:14px;">
         <div class="path">
           <span class="path-item" style="color: var(--accent); border-color: var(--accent); font-weight: 700;">new_request_page.hbs</span>
+        </div>
+        <div class="screenshot-group">
+          <div class="screenshot-item">
+            <img src="img/passo2.png" alt="Lista de arquivos com new_request_page.hbs destacado">
+          </div>
         </div>
       </div>
     </div>
@@ -380,6 +423,11 @@
         </div>
       </div>
       <div class="step-detail" style="display:flex;flex-direction:column;gap:14px;">
+        <div class="screenshot-group">
+          <div class="screenshot-item">
+            <img src="img/passo5.png" alt="Exemplo do modelo de comunicado no arquivo">
+          </div>
+        </div>
         <p class="template-title">Modelo de comunicado</p>
         <div class="code-block">
           <button class="copy-btn" onclick="copyCode(this, 'template-code')">Copiar</button>
