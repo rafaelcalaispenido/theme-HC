@@ -33,8 +33,19 @@
         <span class="notice-board-chevron" aria-hidden="true">&#9650;</span>
       </button>
       <div id="notice-board-body" class="notice-board-body">
-        <div class="notice-item notice-empty">
-          <p>No momento não há avisos disponíveis.</p>
+        <div class="notice-item">
+          <p><strong>Atenção! A prefeitura de Joinville/SC migrou para o Portal Gestão NFS-e</strong></p>
+          <p>A prefeitura de <strong>Joinville/SC</strong> passou a utilizar o <strong>Portal Gestão NFS-e</strong> para a emissão de notas fiscais. Para continuar emitindo suas NFS-e normalmente pelo eNotas, é necessário revisar e atualizar algumas configurações do seu cadastro.</p>
+          <p>Verifique os seguintes campos:</p>
+          <ul>
+            <li><strong>Emite pelo Portal Gestão NFS-e:</strong> selecione "Sim";</li>
+            <li><strong>Regime Especial de Tributação;</strong></li>
+            <li><strong>Regime de Apuração de Tributo do Simples Nacional;</strong></li>
+            <li><strong>Método de Autenticação</strong> <em>(caso utilize Certificado Digital, não é necessário alterar este campo)</em>;</li>
+            <li><strong>Serviço Padrão:</strong> informe o <strong>Código de Tributação Nacional (CTN)</strong> e o <strong>Código de Tributação Municipal (CTM)</strong>.</li>
+          </ul>
+          <p><strong>Importante:</strong> caso os campos da <strong>Reforma Tributária</strong> já estejam configurados, <strong>nenhuma alteração é necessária</strong>.</p>
+          <p>Realize essas atualizações para evitar problemas na emissão das suas notas fiscais. Para mais detalhes acesse o <a href="https://enotas.com.br/guiaconfiguracoes/?etapa=2" target="_blank">Guia de Configurações</a>.</p>
         </div>
       </div>
     </div>
@@ -104,6 +115,21 @@
 
   .notice-item {
     padding: 16px 0;
+  }
+
+  .notice-item--bordered {
+    border-top: 1px solid #e0e3e6;
+    margin-top: 4px;
+  }
+
+  .notice-item ul {
+    margin: 8px 0 10px 20px;
+    line-height: 1.7;
+  }
+
+  .notice-item li {
+    margin-bottom: 2px;
+    font-size: 0.95em;
   }
 
   .notice-item p {
